@@ -1,5 +1,5 @@
+import { itemsKey, userLikesKey } from '$services/keys'
 import { client } from '$services/redis'
-import { userLikesKey, itemsKey } from '$services/keys'
 import { getItems } from './items'
 
 export const userLikesItem = async (itemId: string, userId: string) => {

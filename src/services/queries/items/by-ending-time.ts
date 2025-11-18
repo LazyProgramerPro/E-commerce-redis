@@ -1,6 +1,5 @@
+import { itemsByEndingAtKey } from '$services/keys'
 import { client } from '$services/redis'
-import { itemsKey, itemsByEndingAtKey } from '$services/keys'
-import { deserialize } from './deserialize'
 
 export const itemsByEndingTime = async (order: 'DESC' | 'ASC' = 'DESC', offset = 0, count = 10) => {
   const ids = await client.zRange(itemsByEndingAtKey(), Date.now(), '+inf', {
@@ -11,5 +10,5 @@ export const itemsByEndingTime = async (order: 'DESC' | 'ASC' = 'DESC', offset =
     },
   })
 
-  console.log(ids)
+  console.log('ids', ids)
 }

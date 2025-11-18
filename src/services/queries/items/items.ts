@@ -1,9 +1,9 @@
-import type { CreateItemAttrs } from '$services/types'
+import { itemsByEndingAtKey, itemsByViewsKey, itemsKey } from '$services/keys'
 import { client } from '$services/redis'
-import { serialize } from './serialize'
+import type { CreateItemAttrs } from '$services/types'
 import { genId } from '$services/utils'
-import { itemsKey, itemsByViewsKey, itemsByEndingAtKey } from '$services/keys'
 import { deserialize } from './deserialize'
+import { serialize } from './serialize'
 
 export const getItem = async (id: string) => {
   const item = await client.hGetAll(itemsKey(id))

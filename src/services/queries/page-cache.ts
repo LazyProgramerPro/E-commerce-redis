@@ -1,5 +1,5 @@
-import { client } from '$services/redis'
 import { pageCacheKey } from '$services/keys'
+import { client } from '$services/redis'
 
 const cacheRoutes = ['/about', '/privacy', '/auth/signin', '/auth/signup']
 

@@ -1,4 +1,4 @@
-import type { CreateBidAttrs, Bid } from '$services/types'
+import type { Bid, CreateBidAttrs } from '$services/types'
 
 export const createBid = async (attrs: CreateBidAttrs) => {}
 
